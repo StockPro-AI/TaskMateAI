@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="de" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TaskMateAI – KI-gestütztes Aufgaben- und Projektmanagement</title>
+
+  <!-- Fonts (Body & Display) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&family=Instrument+Serif:ital,wght@0,500;0,700;1,500&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a href="#main" class="sr-only">Zum Inhalt springen</a>
+
+  <header class="tm-header">
+    <div class="tm-header-inner">
+      <a href="#top" class="tm-logo" aria-label="TaskMateAI Startseite">
+        <svg class="tm-logo-mark" viewBox="0 0 32 32" aria-hidden="true">
+          <rect x="2" y="5" width="28" height="22" rx="8" class="tm-logo-frame"></rect>
+          <path d="M9 12h14" class="tm-logo-line"></path>
+          <path d="M9 16h8" class="tm-logo-line"></path>
+          <circle cx="23" cy="20" r="3.5" class="tm-logo-accent"></circle>
+        </svg>
+        <span class="tm-logo-text">TaskMateAI</span>
+      </a>
+
+      <nav class="tm-nav" aria-label="Hauptnavigation">
+        <button class="tm-nav-toggle" aria-expanded="false" aria-controls="tm-nav-list">
+          <span class="tm-nav-toggle-bar"></span>
+          <span class="tm-nav-toggle-bar"></span>
+        </button>
+        <ul id="tm-nav-list" class="tm-nav-list">
+          <li><a href="#features">Funktionen</a></li>
+          <li><a href="#workflows">Workflows</a></li>
+          <li><a href="#analytics">Analytics</a></li>
+          <li><a href="#pricing">Preise</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </nav>
+
+      <div class="tm-header-actions">
+        <button class="tm-theme-toggle" type="button" data-theme-toggle aria-label="Zu Dark Mode wechseln">
+          <!-- Sonne -->
+          <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="12" cy="12" r="5"></circle>
+            <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"></path>
+          </svg>
+        </button>
+        <a href="#pricing" class="tm-btn tm-btn-ghost">Preise</a>
+        <a href="#signup" class="tm-btn tm-btn-primary">Kostenlos starten</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- Hero mit KI-Assistent -->
+    <section id="top" class="tm-section tm-hero">
+      <div class="tm-container tm-hero-grid">
+        <div class="tm-hero-copy">
+          <p class="tm-eyebrow">KI-gestütztes Projektmanagement</p>
+          <h1>Organisiere deine Arbeit mit TaskMateAI – intelligenter, schneller, fokussierter.</h1>
+          <p class="tm-hero-subtitle">
+            TaskMateAI priorisiert Aufgaben automatisch, automatisiert Routineprozesse
+            und liefert dir Echtzeit-Insights – damit du und dein Team euch auf das Wesentliche konzentrieren könnt.
+          </p>
+          <div class="tm-hero-actions">
+            <a href="#signup" class="tm-btn tm-btn-primary tm-btn-lg">Jetzt kostenlos testen</a>
+            <button class="tm-btn tm-btn-ghost tm-btn-lg" type="button" data-scroll-target="#features">
+              Live-Demo ansehen
+            </button>
+          </div>
+          <dl class="tm-hero-metrics">
+            <div>
+              <dt>bis zu 30 % weniger Kontextwechsel</dt>
+              <dd>durch KI-gestützte Priorisierung und Fokus-Ansichten.</dd>
+            </div>
+            <div>
+              <dt>Teams jeder Größe</dt>
+              <dd>Start-ups, Freiberufler und wachsende Organisationen.</dd>
+            </div>
+          </dl>
+        </div>
+
+        <aside class="tm-assistant" aria-label="KI-Aufgabenunterstützung">
+          <header class="tm-assistant-header">
+            <div>
+              <h2>TaskMateAI Assistent</h2>
+              <p>Frag die KI, plane deinen Tag in Sekunden.</p>
+            </div>
+            <span class="tm-assistant-status">
+              <span class="tm-assistant-dot"></span>
+              Online
+            </span>
+          </header>
+
+          <div class="tm-assistant-body" id="assistant-messages" aria-live="polite">
+            <div class="tm-message tm-message-ai">
+              <p>Guten Morgen! Ich habe deine heutigen Deadlines analysiert und drei Fokus-Blöcke vorgeschlagen. Bereit?</p>
+            </div>
+            <div class="tm-message tm-message-user">
+              <p>Zeig mir bitte die wichtigsten Aufgaben für heute.</p>
+            </div>
+            <div class="tm-message tm-message-ai">
+              <p>
+                Klar! Ich priorisiere nach Deadline, Aufwand und Auswirkung. Hier ist ein Vorschlag:
+              </p>
+              <ul>
+                <li>Release-Plan „Sprint 12“ finalisieren – Fällig: heute, hoher Impact.</li>
+                <li>Review „Onboarding-Flow“ – 45 Minuten Deep-Work-Block.</li>
+                <li>Stakeholder-Update vorbereiten – Fällig morgen, 30 Minuten.</li>
+              </ul>
+            </div>
+          </div>
+
+          <form class="tm-assistant-input" id="assistant-form">
+            <label for="assistant-prompt" class="sr-only">Frage an TaskMateAI</label>
+            <textarea
+              id="assistant-prompt"
+              name="assistant-prompt"
+              rows="2"
+              placeholder="Beschreibe kurz deinen Tag – TaskMateAI erstellt dir einen strukturierten Plan ..."
+              required
+            ></textarea>
+            <div class="tm-assistant-input-footer">
+              <div class="tm-assistant-suggestions">
+                <button type="button" class="tm-chip" data-prompt="Plane meinen heutigen Arbeitstag in 4 Fokus-Blöcke.">
+                  Tag planen
+                </button>
+                <button type="button" class="tm-chip" data-prompt="Identifiziere Risiken in meinem aktuellen Projekt.">
+                  Risiken finden
+                </button>
+              </div>
+              <button class="tm-btn tm-btn-primary tm-btn-sm" type="submit">
+                Vorschlag generieren
+              </button>
+            </div>
+          </form>
+        </aside>
+      </div>
+    </section>
+
+    <!-- Features -->
+    <section id="features" class="tm-section">
+      <div class="tm-container">
+        <header class="tm-section-header">
+          <p class="tm-eyebrow">Funktionen</p>
+          <h2>Alles, was modernes Projektmanagement braucht – verstärkt durch KI.</h2>
+        </header>
+
+        <div class="tm-grid tm-grid-3">
+          <article class="tm-card">
+            <h3>Intelligente Priorisierung</h3>
+            <p>Die KI gewichtet Deadlines, Abhängigkeiten und Impact automatisch.</p>
+          </article>
+
+          <article class="tm-card">
+            <h3>Anpassbare Workflows</h3>
+            <p>Boards, Kanban, Roadmaps und wiederkehrende Checklisten.</p>
+          </article>
+
+          <article class="tm-card">
+            <h3>Teamkollaboration in Echtzeit</h3>
+            <p>Kommentare, Mentions und Live-Updates halten alle auf dem gleichen Stand.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing -->
+    <section id="pricing" class="tm-section tm-section-alt">
+      <div class="tm-container">
+        <header class="tm-section-header">
+          <p class="tm-eyebrow">Preise</p>
+          <h2>Skalierbares SaaS-Modell für Teams jeder Größe.</h2>
+        </header>
+
+        <div class="tm-grid tm-grid-3 tm-pricing-grid">
+          <article class="tm-card tm-pricing-card">
+            <h3>Starter</h3>
+            <p class="tm-pricing-price">0 €</p>
+            <p class="tm-pricing-caption">kostenlos</p>
+          </article>
+
+          <article class="tm-card tm-pricing-card tm-pricing-card-featured">
+            <h3>Team</h3>
+            <p class="tm-pricing-price">12 €</p>
+            <p class="tm-pricing-caption">pro Nutzer / Monat</p>
+          </article>
+
+          <article class="tm-card tm-pricing-card">
+            <h3>Scale</h3>
+            <p class="tm-pricing-price">Individuell</p>
+            <p class="tm-pricing-caption">Enterprise</p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="tm-footer">
+    <div class="tm-container tm-footer-inner">
+      <div class="tm-footer-brand">
+        <span class="tm-logo-text">TaskMateAI</span>
+        <p>KI-gestützte Plattform für Aufgaben- und Projektmanagement.</p>
+      </div>
+      <p class="tm-footer-meta">
+        © <span id="tm-year"></span> TaskMateAI. Alle Rechte vorbehalten.
+      </p>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
